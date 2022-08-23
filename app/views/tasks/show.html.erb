@@ -1,0 +1,10 @@
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+
+<h3><%= link_to("Back to index", index_path) %></h3>
+<h3><%= link_to("Edit a task", task_edit_path) %></h3>
+<h3><%= link_to("Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"})
+%></h3>
+<%# data turbo method - triggers JS message %>
