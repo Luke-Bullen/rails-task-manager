@@ -3,7 +3,10 @@
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_field :details %>
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
+  <%# the below makes it so the checkox option doesnt show if it's a new record being created %>
+  <% unless f.object.new_record? %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  <% end %>
   <%= f.submit %>
 <% end %>
